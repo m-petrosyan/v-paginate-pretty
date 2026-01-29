@@ -22,7 +22,8 @@
     "build": "vite build && vue-tsc --declaration --emitDeclarationOnly",
     "preview": "vite preview",
     "playground": "cd playground && npm run dev",
-    "playground:build": "cd playground && npm run build"
+    "playground:build": "cd playground && npm run build",
+    "deploy": "npm run playground:build && gh-pages -d playground/dist"
   },
   "keywords": [
     "vue",
