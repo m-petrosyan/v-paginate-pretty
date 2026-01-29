@@ -32,8 +32,8 @@
 
     <!-- Dynamic Page Buttons -->
     <template v-if="!hideNumbers">
-      <template v-for="page in visiblePages" :key="page">
-        <span v-if="page === '...'" class="v-pagination__ellipsis" aria-hidden="true">
+      <template v-for="(page, index) in visiblePages" :key="`${page}-${index}`">
+        <span v-if="page === -1" class="v-pagination__ellipsis" aria-hidden="true">
           ...
         </span>
         <button
