@@ -1,7 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted } from 'vue'
 import { VPagination } from 'v-paginate-pretty'
-import 'v-paginate-pretty/dist/style.css'
 
 const isDark = ref(false)
 

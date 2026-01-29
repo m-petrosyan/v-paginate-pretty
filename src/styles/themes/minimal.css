@@ -26,6 +26,19 @@
     --v-pagination-ellipsis-color: #a3a3a3;
 }
 
+/* Force dark mode colors when .dark class is present on html/body */
+.dark .v-pagination--minimal,
+[data-theme='dark'] .v-pagination--minimal {
+    --v-pagination-button-color: #ffffff !important;
+    --v-pagination-ellipsis-color: #ffffff !important;
+
+    --v-pagination-active-bg: #ffffff !important;
+    --v-pagination-active-color: #000000 !important;
+
+    --v-pagination-button-hover-bg: #ffffff !important;
+    --v-pagination-button-hover-color: #000000 !important;
+}
+
 .v-pagination--minimal .v-pagination__button {
     font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
 }
