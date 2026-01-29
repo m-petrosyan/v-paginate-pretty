@@ -1,6 +1,6 @@
 {
   "name": "v-paginate-pretty",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Beautiful and customizable pagination component for Vue 3 with Composition API",
   "main": "./dist/v-paginate-pretty.umd.js",
   "module": "./dist/v-paginate-pretty.es.js",
