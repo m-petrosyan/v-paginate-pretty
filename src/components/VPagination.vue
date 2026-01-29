@@ -78,7 +78,7 @@
 </template>
 
 <script setup lang="ts">
-import { watch } from 'vue'
+import { watch, onMounted } from 'vue'
 import { usePagination } from '../composables/usePagination'
 import type { PaginationProps, PaginationEmits } from '../types'
 
@@ -89,6 +89,8 @@ const props = withDefaults(defineProps<PaginationProps>(), {
   theme: 'default',
   showFirstLast: true,
   showPrevNext: true,
+  syncUrl: true,
+  urlKey: 'page',
   disabled: false,
   ariaLabel: 'Pagination Navigation'
 })
@@ -120,10 +122,26 @@ watch(() => props.currentPage, (newPage: number) => {
   }
 })
 
-// Emit changes
+// Emit changes and sync with URL
 watch(currentPage, (newPage: number) => {
   emit('update:currentPage', newPage)
   emit('change', newPage)
+
+  if (props.syncUrl && typeof window !== 'undefined') {
+    const url = new URL(window.location.href)
+    url.searchParams.set(props.urlKey || 'page', newPage.toString())
+    window.history.pushState({}, '', url.toString())
+  }
+})
+
+onMounted(() => {
+  if (props.syncUrl && typeof window !== 'undefined') {
+    const params = new URLSearchParams(window.location.search)
+    const pageFromUrl = parseInt(params.get(props.urlKey || 'page') || '')
+    if (pageFromUrl && !isNaN(pageFromUrl) && pageFromUrl !== currentPage.value) {
+      goToPage(pageFromUrl)
+    }
+  }
 })
 
 const handlePageClick = (page: number) => {

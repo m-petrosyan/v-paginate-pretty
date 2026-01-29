@@ -78,6 +78,8 @@ Added a special **Isometric Cube** theme that brings a 3D feel directly to your 
 | `maxVisibleButtons` | `number` | `7` | Maximum number of page buttons to show |
 | `theme` | `string` | `'default'` | Theme name: `default`, `modern`, `minimal`, `gradient`, `cube`, `gothic`. |
 | `hideNumbers` | `boolean` | `false` | If `true`, only navigation arrows will be shown. |
+| `syncUrl` | `boolean` | `true` | Automatically sync current page with URL (?page=1) |
+| `urlKey` | `string` | `'page'` | Query parameter key for URL synchronization |
 | `showFirstLast` | `boolean` | `true` | Show first/last page buttons |
 | `showPrevNext` | `boolean` | `true` | Show previous/next buttons |
 | `disabled` | `boolean` | `false` | Disable all pagination controls |

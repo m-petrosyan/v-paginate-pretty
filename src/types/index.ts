@@ -15,8 +15,10 @@ export interface PaginationProps {
     showPrevNext?: boolean
     /** Whether to hide page numbers (only show navigation arrows) */
     hideNumbers?: boolean
-    /** Disable all pagination controls */
-    disabled?: boolean
+    /** Whether to sync current page with URL (?page=1) */
+    syncUrl?: boolean
+    /** URL query parameter key for the page */
+    urlKey?: string
     /** Custom aria-label for accessibility */
     ariaLabel?: string
 }
