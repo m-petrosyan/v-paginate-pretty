@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vue Pagination - Demo</title>
+  <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 2rem;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    h1 {
+      color: white;
+      text-align: center;
+      margin-bottom: 3rem;
+      font-size: 2.5rem;
+      text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+    }
+
+    .demo-section {
+      background: white;
+      border-radius: 1rem;
+      padding: 2rem;
+      margin-bottom: 2rem;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    }
+
+    .demo-section h2 {
+      margin-bottom: 0.5rem;
+      color: #1f2937;
+    }
+
+    .demo-section p {
+      color: #6b7280;
+      margin-bottom: 1.5rem;
+    }
+
+    .pagination-wrapper {
+      display: flex;
+      justify-content: center;
+      padding: 2rem 0;
+    }
+
+    .info {
+      text-align: center;
+      margin-top: 1rem;
+      color: #6b7280;
+      font-size: 0.875rem;
+    }
+
+    .controls {
+      display: flex;
+      gap: 1rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .control-group label {
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: #374151;
+    }
+
+    .control-group input,
+    .control-group select {
+      padding: 0.5rem;
+      border: 1px solid #d1d5db;
+      border-radius: 0.375rem;
+      font-size: 0.875rem;
+    }
+
+    code {
+      background: #f3f4f6;
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.25rem;
+      font-family: 'SF Mono', Monaco, monospace;
+      font-size: 0.875rem;
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="container">
+      <h1>🎨 Vue Pagination Component Demo</h1>
+
+      <!-- Default Theme -->
+      <div class="demo-section">
+        <h2>Default Theme</h2>
+        <p>Clean and professional design perfect for business applications</p>
+        <div class="pagination-wrapper">
+          <v-pagination
+            v-model:current-page="page1"
+            :total-items="100"
+            :items-per-page="10"
+            theme="default"
+          />
+        </div>
+        <div class="info">
+          Current Page: <code>{{ page1 }}</code> | Total Pages: <code>10</code>
+        </div>
+      </div>
+
+      <!-- Modern Theme -->
+      <div class="demo-section">
+        <h2>Modern Theme</h2>
+        <p>Glassmorphism effects with vibrant gradients</p>
+        <div class="pagination-wrapper">
+          <v-pagination
+            v-model:current-page="page2"
+            :total-items="200"
+            :items-per-page="10"
+            theme="modern"
+          />
+        </div>
+        <div class="info">
+          Current Page: <code>{{ page2 }}</code> | Total Pages: <code>20</code>
+        </div>
+      </div>
+
+      <!-- Minimal Theme -->
+      <div class="demo-section">
+        <h2>Minimal Theme</h2>
+        <p>Clean black & white design for minimalist interfaces</p>
+        <div class="pagination-wrapper">
+          <v-pagination
+            v-model:current-page="page3"
+            :total-items="150"
+            :items-per-page="10"
+            theme="minimal"
+          />
+        </div>
+        <div class="info">
+          Current Page: <code>{{ page3 }}</code> | Total Pages: <code>15</code>
+        </div>
+      </div>
+
+      <!-- Gradient Theme -->
+      <div class="demo-section">
+        <h2>Gradient Theme</h2>
+        <p>Vibrant gradients with smooth animations</p>
+        <div class="pagination-wrapper">
+          <v-pagination
+            v-model:current-page="page4"
+            :total-items="300"
+            :items-per-page="10"
+            theme="gradient"
+          />
+        </div>
+        <div class="info">
+          Current Page: <code>{{ page4 }}</code> | Total Pages: <code>30</code>
+        </div>
+      </div>
+
+      <!-- Customizable Demo -->
+      <div class="demo-section">
+        <h2>Customizable Options</h2>
+        <p>Try different configurations</p>
+        
+        <div class="controls">
+          <div class="control-group">
+            <label>Total Items</label>
+            <input type="number" v-model.number="totalItems" min="1" max="1000">
+          </div>
+          <div class="control-group">
+            <label>Items Per Page</label>
+            <input type="number" v-model.number="itemsPerPage" min="1" max="100">
+          </div>
+          <div class="control-group">
+            <label>Max Visible Buttons</label>
+            <input type="number" v-model.number="maxVisible" min="3" max="15">
+          </div>
+          <div class="control-group">
+            <label>Theme</label>
+            <select v-model="selectedTheme">
+              <option value="default">Default</option>
+              <option value="modern">Modern</option>
+              <option value="minimal">Minimal</option>
+              <option value="gradient">Gradient</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="pagination-wrapper">
+          <v-pagination
+            v-model:current-page="page5"
+            :total-items="totalItems"
+            :items-per-page="itemsPerPage"
+            :max-visible-buttons="maxVisible"
+            :theme="selectedTheme"
+            @change="handlePageChange"
+          />
+        </div>
+        <div class="info">
+          Current Page: <code>{{ page5 }}</code> | 
+          Total Pages: <code>{{ Math.ceil(totalItems / itemsPerPage) }}</code> |
+          Items: <code>{{ totalItems }}</code>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script type="module">
+    import { createApp } from 'https://unpkg.com/vue@3/dist/vue.esm-browser.js'
+    import VPagination from './dist/vue-pagination.es.js'
+
+    createApp({
+      components: {
+        VPagination
+      },
+      data() {
+        return {
+          page1: 1,
+          page2: 1,
+          page3: 1,
+          page4: 1,
+          page5: 1,
+          totalItems: 500,
+          itemsPerPage: 20,
+          maxVisible: 7,
+          selectedTheme: 'default'
+        }
+      },
+      methods: {
+        handlePageChange(page) {
+          console.log('Page changed to:', page)
+        }
+      }
+    }).mount('#app')
+  </script>
+</body>
+</html>

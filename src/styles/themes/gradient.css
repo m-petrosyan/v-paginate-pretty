@@ -1,0 +1,77 @@
+/* Gradient Theme - Vibrant & Animated */
+.v-pagination--gradient {
+    --v-pagination-gap: 0.625rem;
+    --v-pagination-button-size: 3rem;
+    --v-pagination-button-border: 2px solid transparent;
+    --v-pagination-button-radius: 0.75rem;
+    --v-pagination-button-bg: #ffffff;
+    --v-pagination-button-color: #1f2937;
+    --v-pagination-button-font-size: 0.9375rem;
+    --v-pagination-button-font-weight: 600;
+
+    --v-pagination-button-hover-bg: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    --v-pagination-button-hover-color: #ffffff;
+    --v-pagination-button-hover-border: transparent;
+
+    --v-pagination-active-bg: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    --v-pagination-active-color: #ffffff;
+    --v-pagination-active-border: transparent;
+    --v-pagination-active-hover-bg: linear-gradient(135deg, #f5576c 0%, #feda75 100%);
+    --v-pagination-active-hover-border: transparent;
+
+    --v-pagination-focus-ring: rgba(250, 112, 154, 0.4);
+    --v-pagination-ellipsis-color: #9ca3af;
+}
+
+.v-pagination--gradient .v-pagination__button {
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.v-pagination--gradient .v-pagination__button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, #ffecd2 0%, #fcb69f 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: -1;
+}
+
+.v-pagination--gradient .v-pagination__button:hover:not(:disabled)::before {
+    opacity: 1;
+}
+
+.v-pagination--gradient .v-pagination__button--active {
+    background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);
+    box-shadow: 0 10px 20px -5px rgba(250, 112, 154, 0.5);
+    animation: gradient-pulse 2s ease-in-out infinite;
+}
+
+.v-pagination--gradient .v-pagination__button--active:hover {
+    background: linear-gradient(135deg, #f5576c 0%, #feda75 100%);
+    box-shadow: 0 15px 30px -5px rgba(250, 112, 154, 0.6);
+    transform: translateY(-2px) scale(1.05);
+}
+
+@keyframes gradient-pulse {
+
+    0%,
+    100% {
+        box-shadow: 0 10px 20px -5px rgba(250, 112, 154, 0.5);
+    }
+
+    50% {
+        box-shadow: 0 15px 30px -5px rgba(250, 112, 154, 0.7);
+    }
+}
+
+.v-pagination--gradient .v-pagination__button:hover:not(:disabled) {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.15), 0 4px 6px -2px rgba(0, 0, 0, 0.1);
+}

@@ -1,0 +1,51 @@
+/* Modern Theme - Glassmorphism & Vibrant Colors */
+.v-pagination--modern {
+    --v-pagination-gap: 0.75rem;
+    --v-pagination-button-size: 2.75rem;
+    --v-pagination-button-border: 1px solid rgba(0, 0, 0, 0.05);
+    --v-pagination-button-radius: 1rem;
+    --v-pagination-button-bg: rgba(255, 255, 255, 0.5);
+    --v-pagination-button-color: #374151;
+    --v-pagination-button-font-size: 0.875rem;
+    --v-pagination-button-font-weight: 600;
+
+    --v-pagination-button-hover-bg: rgba(255, 255, 255, 0.8);
+    --v-pagination-button-hover-border: rgba(0, 0, 0, 0.1);
+
+    --v-pagination-active-bg: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    --v-pagination-active-color: #ffffff;
+    --v-pagination-active-border: transparent;
+    --v-pagination-active-hover-bg: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
+    --v-pagination-active-hover-border: transparent;
+
+    --v-pagination-focus-ring: rgba(102, 126, 234, 0.4);
+    --v-pagination-ellipsis-color: #6b7280;
+}
+
+.is-dark .v-pagination--modern {
+    --v-pagination-button-border: 1px solid rgba(255, 255, 255, 0.1);
+    --v-pagination-button-bg: rgba(255, 255, 255, 0.05);
+    --v-pagination-button-color: #e5e7eb;
+    --v-pagination-button-hover-bg: rgba(255, 255, 255, 0.15);
+    --v-pagination-button-hover-border: rgba(255, 255, 255, 0.2);
+}
+
+.v-pagination--modern .v-pagination__button {
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+
+.v-pagination--modern .v-pagination__button--active {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    box-shadow: 0 10px 15px -3px rgba(102, 126, 234, 0.4), 0 4px 6px -2px rgba(102, 126, 234, 0.2);
+}
+
+.v-pagination--modern .v-pagination__button--active:hover {
+    background: linear-gradient(135deg, #5568d3 0%, #6a3f8f 100%);
+    box-shadow: 0 20px 25px -5px rgba(102, 126, 234, 0.4), 0 10px 10px -5px rgba(102, 126, 234, 0.2);
+}
+
+.v-pagination--modern .v-pagination__button:hover:not(:disabled) {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}

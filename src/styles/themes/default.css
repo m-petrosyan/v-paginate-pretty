@@ -1,0 +1,25 @@
+/* Default Theme - Clean and Professional */
+.v-pagination--default {
+    --v-pagination-gap: 0.5rem;
+    --v-pagination-button-size: 2.5rem;
+    --v-pagination-button-border: 1px solid #e5e7eb;
+    --v-pagination-button-radius: 0.5rem;
+    --v-pagination-button-bg: #ffffff;
+    --v-pagination-button-color: #374151;
+    --v-pagination-button-font-size: 0.875rem;
+    --v-pagination-button-font-weight: 500;
+
+    --v-pagination-button-hover-bg: #f3f4f6;
+    --v-pagination-button-hover-color: #2563eb;
+    --v-pagination-button-hover-border: #d1d5db;
+
+    --v-pagination-active-bg: #3b82f6;
+    --v-pagination-active-color: #ffffff;
+    --v-pagination-active-border: #3b82f6;
+    --v-pagination-active-hover-bg: #60a5fa;
+    --v-pagination-active-hover-color: #ffffff;
+    --v-pagination-active-hover-border: #1d4ed8;
+
+    --v-pagination-focus-ring: rgba(59, 130, 246, 0.3);
+    --v-pagination-ellipsis-color: #9ca3af;
+}

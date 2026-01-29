@@ -1,0 +1,35 @@
+/* Minimal Theme - Clean Black & White */
+.v-pagination--minimal {
+    --v-pagination-gap: 0.25rem;
+    --v-pagination-button-size: 2.25rem;
+    --v-pagination-button-border: none;
+    --v-pagination-button-radius: 0.25rem;
+    --v-pagination-button-bg: transparent;
+    --v-pagination-button-color: #000000;
+    --v-pagination-button-font-size: 0.875rem;
+    --v-pagination-button-font-weight: 400;
+
+    --v-pagination-button-hover-bg: #f5f5f5;
+    --v-pagination-button-hover-border: none;
+
+    --v-pagination-button-hover-bg: #000000;
+    --v-pagination-button-hover-color: #ffffff;
+
+    --v-pagination-active-bg: #000000;
+    --v-pagination-active-color: #ffffff;
+    --v-pagination-active-border: none;
+    --v-pagination-active-hover-bg: #333333;
+    --v-pagination-active-hover-color: #ffffff;
+    --v-pagination-active-hover-border: none;
+
+    --v-pagination-focus-ring: rgba(0, 0, 0, 0.2);
+    --v-pagination-ellipsis-color: #a3a3a3;
+}
+
+.v-pagination--minimal .v-pagination__button {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+}
+
+.v-pagination--minimal .v-pagination__button:hover:not(:disabled) {
+    transform: none;
+}

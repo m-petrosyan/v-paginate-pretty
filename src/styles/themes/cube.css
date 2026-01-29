@@ -1,0 +1,75 @@
+/* Cube Theme - Isometric 3D Effect */
+.v-pagination--cube {
+    --v-pagination-gap: 1rem;
+    --v-pagination-button-size: 3rem;
+    --v-pagination-button-bg: #ffffff;
+    --v-pagination-button-color: #4b5563;
+    --v-pagination-button-radius: 0.75rem;
+    --v-pagination-button-border: none;
+
+    /* 3D Depth Shadow */
+    --v-pagination-button-shadow:
+        0 1px 0 #e5e7eb,
+        0 2px 0 #d1d5db,
+        0 3px 0 #9ca3af,
+        0 4px 0 #6b7280,
+        0 6px 12px rgba(0, 0, 0, 0.1);
+
+    --v-pagination-button-active-bg: linear-gradient(135deg, #646cff 0%, #4b5563 100%);
+    --v-pagination-button-active-color: #ffffff;
+    --v-pagination-button-active-shadow:
+        0 1px 0 #5058cc,
+        0 2px 0 #4048b3,
+        0 3px 0 #303899,
+        0 4px 0 #202880,
+        0 8px 16px rgba(100, 108, 255, 0.4);
+}
+
+.v-pagination--cube .v-pagination__button {
+    box-shadow: var(--v-pagination-button-shadow);
+    transform: perspective(500px) rotateX(10deg);
+    transition: all 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    font-weight: 700;
+}
+
+.v-pagination--cube .v-pagination__button:hover:not(:disabled):not(.v-pagination__button--active) {
+    transform: perspective(500px) rotateX(5deg) translateY(-2px);
+    background-color: var(--v-pagination-button-hover-bg, #f9fafb);
+    color: var(--v-pagination-button-hover-color, #2563eb);
+    box-shadow:
+        0 1px 0 #e5e7eb,
+        0 2px 0 #d1d5db,
+        0 3px 0 #9ca3af,
+        0 4px 0 #6b7280,
+        0 5px 0 #4b5563,
+        0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.v-pagination--cube .v-pagination__button--active {
+    background: var(--v-pagination-button-active-bg);
+    box-shadow: var(--v-pagination-button-active-shadow);
+    transform: perspective(500px) rotateX(10deg) translateY(-4px);
+    z-index: 2;
+}
+
+.v-pagination--cube .v-pagination__button:active:not(:disabled) {
+    transform: perspective(500px) rotateX(15deg) translateY(2px);
+    box-shadow:
+        0 1px 0 #9ca3af,
+        0 2px 0 #6b7280,
+        0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Dark mode adjustments */
+.is-dark .v-pagination--cube {
+    --v-pagination-button-bg: #2d2d2d;
+    --v-pagination-button-color: #e5e7eb;
+    --v-pagination-button-hover-bg: #3d3d3d;
+    --v-pagination-button-hover-color: #60a5fa;
+    --v-pagination-button-shadow:
+        0 1px 0 #1a1a1a,
+        0 2px 0 #111111,
+        0 3px 0 #0a0a0a,
+        0 4px 0 #000000,
+        0 6px 12px rgba(0, 0, 0, 0.5);
+}

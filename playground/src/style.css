@@ -1,0 +1,128 @@
+:root {
+    font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+    font-weight: 400;
+
+    color-scheme: light;
+    --bg-color: #f7f9fc;
+    --text-color: #213547;
+    --container-bg: #ffffff;
+    --section-bg: #f8fafc;
+    --border-color: rgba(0, 0, 0, 0.05);
+
+    color: var(--text-color);
+    background-color: var(--bg-color);
+
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+:root.dark {
+    color-scheme: dark;
+    --bg-color: #1a1a1a;
+    --text-color: rgba(255, 255, 255, 0.87);
+    --container-bg: rgba(255, 255, 255, 0.05);
+    --section-bg: rgba(255, 255, 255, 0.03);
+    --border-color: rgba(255, 255, 255, 0.1);
+}
+
+body {
+    margin: 0;
+    display: flex;
+    place-items: center;
+    min-width: 320px;
+    min-height: 100vh;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+#app {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 2rem;
+    text-align: center;
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+h1 {
+    font-size: 2.5em;
+    line-height: 1.1;
+    margin: 0;
+    background: linear-gradient(to right, #646cff, #ff4646);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.theme-toggle {
+    padding: 0.6rem 1.2rem;
+    border-radius: 2rem;
+    border: 1px solid #646cff;
+    background: transparent;
+    color: #646cff;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.2s;
+}
+
+.theme-toggle:hover {
+    background: #646cff;
+    color: white;
+}
+
+.demo-container {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+    padding: 2.5rem;
+    background: var(--container-bg);
+    border-radius: 1.5rem;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+    border: 1px solid var(--border-color);
+    transition: all 0.3s ease;
+}
+
+.theme-section {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem;
+    background: var(--section-bg);
+    border-radius: 1rem;
+    transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.theme-section:hover {
+    transform: translateY(-5px);
+}
+
+.theme-section h2 {
+    margin: 0;
+    text-transform: capitalize;
+    color: #646cff;
+    font-size: 1.5rem;
+    letter-spacing: 0.05em;
+}
+
+.status-text {
+    font-size: 0.9rem;
+    color: #888;
+    margin-top: 0.5rem;
+}
+
+.is-dark .demo-container {
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+}
