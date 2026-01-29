@@ -49,10 +49,10 @@
   },
   "repository": {
     "type": "git",
-    "url": ""
+    "url": "git+https://github.com/m-petrosyan/v-paginate-pretty.git"
   },
   "bugs": {
-    "url": ""
+    "url": "https://github.com/m-petrosyan/v-paginate-pretty/issues"
   },
-  "homepage": ""
+  "homepage": "https://m-petrosyan.github.io/v-paginate-pretty/"
 }
