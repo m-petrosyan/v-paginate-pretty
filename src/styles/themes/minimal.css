@@ -1,4 +1,4 @@
-/* Minimal Theme - Clean Black & White */
+/* Minimal Theme - High Contrast Mono */
 .v-pagination--minimal {
     --v-pagination-gap: 0.25rem;
     --v-pagination-button-size: 2.25rem;
@@ -8,9 +8,6 @@
     --v-pagination-button-color: #000000;
     --v-pagination-button-font-size: 0.875rem;
     --v-pagination-button-font-weight: 400;
-
-    --v-pagination-button-hover-bg: #f5f5f5;
-    --v-pagination-button-hover-border: none;
 
     --v-pagination-button-hover-bg: #000000;
     --v-pagination-button-hover-color: #ffffff;
@@ -26,7 +23,24 @@
     --v-pagination-ellipsis-color: #a3a3a3;
 }
 
-/* Force dark mode colors when .dark class is present on html/body */
+/* Base button cleanup and specificity fix */
+.v-pagination--minimal .v-pagination__button {
+    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
+    color: var(--v-pagination-button-color);
+}
+
+.v-pagination--minimal .v-pagination__button--active {
+    color: var(--v-pagination-active-color) !important;
+    background: var(--v-pagination-active-bg) !important;
+}
+
+.v-pagination--minimal .v-pagination__button svg {
+    color: inherit;
+    width: 1.2rem;
+    height: 1.2rem;
+}
+
+/* Dark Mode Support (MANDATORY override via .dark class) */
 .dark .v-pagination--minimal,
 [data-theme='dark'] .v-pagination--minimal {
     --v-pagination-button-color: #ffffff !important;
@@ -37,10 +51,6 @@
 
     --v-pagination-button-hover-bg: #ffffff !important;
     --v-pagination-button-hover-color: #000000 !important;
-}
-
-.v-pagination--minimal .v-pagination__button {
-    font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Fira Code', monospace;
 }
 
 .v-pagination--minimal .v-pagination__button:hover:not(:disabled) {
