@@ -5,6 +5,7 @@ Beautiful and customizable pagination component for **Vue 3** with Composition A
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Vue 3](https://img.shields.io/badge/Vue-3.x-4fc08d?logo=vue.js)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?logo=typescript)](https://www.typescriptlang.org/)
+[![Demo](https://img.shields.io/badge/Demo-Live-blueviolet?style=for-the-badge&logo=google-chrome)](https://m-petrosyan.github.io/v-paginate-pretty/)
 
 ## ✨ Features
 
