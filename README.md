@@ -1,6 +1,6 @@
 # v-paginate-pretty 🎨
 
-Beautiful and customizable pagination component for **Vue 3** with Composition API. Featuring 6 stunning themes (including 3D, Gothic, and Glassmorphism) and TypeScript support.
+Beautiful and customizable pagination component for **Vue 3** with Composition API. Featuring 10 stunning themes (including 3D, Cyberpunk, and Neumorphism) and TypeScript support.
 
 Check out the live demo here: https://m-petrosyan.github.io/v-paginate-pretty/
 
@@ -12,7 +12,7 @@ Check out the live demo here: https://m-petrosyan.github.io/v-paginate-pretty/
 ## ✨ Features
 
 - 🚀 **Vue 3 Composition API** - Built from the ground up for modern Vue.
-- 🎨 **6 Stunning Themes** - Default, Modern Glass, Minimal, Gradient, 3D Cube, and Gothic.
+- 🎨 **10 Stunning Themes** - From professional Glassmorphism to creative Cyberpunk & Retro styles.
 - 🎲 **Flexible Navigation** - Optional "First/Last" and "Prev/Next" buttons.
 - 📏 **Customizable Layout** - Control the number of visible pages.
 - 🌑 **Dark Mode Ready** - All themes look great in dark mode.
