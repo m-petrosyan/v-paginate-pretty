@@ -1,7 +1,7 @@
 <!-- Custom Theme Example -->
 <script setup>
 import { ref } from 'vue'
-import { VPagination } from '@vue-pagination/core'
+import { VPagination } from 'v-paginate-pretty'
 
 const currentPage = ref(1)
 </script>

@@ -1,7 +1,7 @@
 <!-- Using Composable Directly -->
 <script setup>
 import { ref, watch } from 'vue'
-import { usePagination } from '@vue-pagination/core'
+import { usePagination } from 'v-paginate-pretty'
 
 const items = ref([...Array(100)].map((_, i) => ({
   id: i + 1,

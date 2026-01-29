@@ -1,4 +1,4 @@
-# Contributing to @vue-pagination/core
+# Contributing to v-paginate-pretty
 
 Thank you for your interest in contributing! This document provides guidelines for contributing to this project.
 

@@ -1,7 +1,7 @@
 <!-- Advanced Usage with Data Fetching -->
 <script setup>
 import { ref, watch, computed } from 'vue'
-import { VPagination } from '@vue-pagination/core'
+import { VPagination } from 'v-paginate-pretty'
 
 const currentPage = ref(1)
 const itemsPerPage = 20
