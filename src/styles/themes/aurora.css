@@ -1,0 +1,55 @@
+/* Aurora Flow Theme - Fluid Animated Gradients */
+.v-pagination--aurora {
+    --v-pagination-gap: 1rem;
+    --v-pagination-button-size: 2.4rem;
+    --v-pagination-button-bg: rgba(255, 255, 255, 0.1);
+    --v-pagination-button-color: #ffffff;
+    --v-pagination-button-border: 1px solid rgba(255, 255, 255, 0.2);
+    --v-pagination-button-radius: 12px;
+}
+
+.v-pagination--aurora {
+    padding: 1rem;
+    border-radius: 20px;
+    background: linear-gradient(-45deg, #00d2ff, #3a7bd5, #00f2fe, #4facfe);
+    background-size: 400% 400%;
+    animation: aurora-move 15s ease infinite;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+@keyframes aurora-move {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.v-pagination--aurora .v-pagination__button {
+    backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.15);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.v-pagination--aurora .v-pagination__button:hover:not(:disabled) {
+    background: rgba(255, 255, 255, 0.3);
+    border-color: #ffffff;
+    transform: translateY(-4px) scale(1.1);
+}
+
+.v-pagination--aurora .v-pagination__button--active {
+    background: #ffffff !important;
+    color: #3a7bd5 !important;
+    box-shadow: 0 8px 20px rgba(255, 255, 255, 0.4);
+}
+
+.v-pagination--aurora .v-pagination__ellipsis {
+    color: #ffffff;
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+}

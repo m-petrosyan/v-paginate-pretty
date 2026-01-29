@@ -8,12 +8,33 @@
     user-select: none;
 }
 
+/* Size Variants (Forced utility overrides on container) */
+.v-pagination.v-pagination--sm {
+    --v-pagination-button-size: 1.75rem !important;
+    --v-pagination-gap: 0.25rem !important;
+}
+
+.v-pagination.v-pagination--md {
+    --v-pagination-button-size: 2.25rem !important;
+    --v-pagination-gap: 0.5rem !important;
+}
+
+.v-pagination.v-pagination--lg {
+    --v-pagination-button-size: 2.75rem !important;
+    --v-pagination-gap: 0.75rem !important;
+}
+
+.v-pagination.v-pagination--xl {
+    --v-pagination-button-size: 3.25rem !important;
+    --v-pagination-gap: 1rem !important;
+}
+
 .v-pagination__button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: var(--v-pagination-button-size, 2.5rem);
-    height: var(--v-pagination-button-size, 2.5rem);
+    min-width: var(--v-pagination-button-size, 2.25rem);
+    height: var(--v-pagination-button-size, 2.25rem);
     padding: 0.5rem;
     border: var(--v-pagination-button-border, 1px solid #e5e7eb);
     border-radius: var(--v-pagination-button-radius, 0.5rem);
@@ -68,8 +89,8 @@
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    min-width: 2.5rem;
-    height: 2.5rem;
+    min-width: var(--v-pagination-button-size, 2.25rem);
+    height: var(--v-pagination-button-size, 2.25rem);
     color: var(--v-pagination-ellipsis-color, #9ca3af);
     font-weight: 600;
     user-select: none;
@@ -80,15 +101,15 @@
     pointer-events: none;
 }
 
-/* Responsive Design */
+/* Responsive Design (Using variables for consistency) */
 @media (max-width: 640px) {
     .v-pagination {
-        gap: 0.25rem;
+        gap: calc(var(--v-pagination-gap, 0.5rem) * 0.5);
     }
 
     .v-pagination__button {
-        min-width: 2rem;
-        height: 2rem;
+        min-width: calc(var(--v-pagination-button-size, 2.25rem) * 0.8);
+        height: calc(var(--v-pagination-button-size, 2.25rem) * 0.8);
         font-size: 0.75rem;
     }
 
@@ -98,7 +119,7 @@
     }
 
     .v-pagination__ellipsis {
-        min-width: 2rem;
-        height: 2rem;
+        min-width: calc(var(--v-pagination-button-size, 2.25rem) * 0.8);
+        height: calc(var(--v-pagination-button-size, 2.25rem) * 0.8);
     }
 }

@@ -1,0 +1,63 @@
+/* Cyberpunk Theme - High Tech / Yellow Glitch */
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&display=swap');
+
+.v-pagination--cyberpunk {
+    --v-pagination-gap: 0.75rem;
+    --v-pagination-button-size: 2.4rem;
+    --v-pagination-button-bg: #f3ec19;
+    --v-pagination-button-color: #000000;
+    --v-pagination-button-border: 4px solid #000000;
+    --v-pagination-button-radius: 0;
+
+    --v-pagination-active-bg: #000000;
+    --v-pagination-active-color: #f3ec19;
+    --v-pagination-active-border: 4px solid #f3ec19;
+
+    --v-pagination-button-hover-bg: #000000;
+    --v-pagination-button-hover-color: #f3ec19;
+
+    --v-pagination-ellipsis-color: #000000;
+}
+
+.v-pagination--cyberpunk .v-pagination__button {
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 900;
+    text-transform: uppercase;
+    position: relative;
+    clip-path: polygon(10% 0, 100% 0, 100% 70%, 90% 100%, 0 100%, 0 30%);
+    transition: all 0.2s step-end;
+}
+
+.v-pagination--cyberpunk .v-pagination__button:hover:not(:disabled) {
+    transform: translate(-3px, -3px);
+    box-shadow: 6px 6px 0px #ff003c;
+    background: #000 !important;
+    color: #f3ec19 !important;
+}
+
+.v-pagination--cyberpunk .v-pagination__button--active {
+    background: #000 !important;
+    color: #f3ec19 !important;
+    box-shadow: 4px 4px 0px #00e5ff;
+}
+
+.v-pagination--cyberpunk .v-pagination__button svg {
+    stroke-width: 3px;
+}
+
+/* Glitch animation on hover */
+@keyframes cyber-glitch {
+    0% {
+        clip-path: polygon(0 2%, 100% 2%, 100% 5%, 0 5%);
+    }
+
+    20% {
+        clip-path: polygon(0 15%, 100% 15%, 100% 15%, 0 15%);
+    }
+
+    30% {
+        clip-path: polygon(0 10%, 100% 10%, 100% 20%, 0 20%);
+    }
+
+    /* ... more frames ... */
+}

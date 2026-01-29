@@ -1,7 +1,7 @@
 /* Cube Theme - Isometric 3D Effect */
 .v-pagination--cube {
     --v-pagination-gap: 1rem;
-    --v-pagination-button-size: 3rem;
+    --v-pagination-button-size: 2.4rem;
     --v-pagination-button-bg: #ffffff;
     --v-pagination-button-color: #4b5563;
     --v-pagination-button-radius: 0.75rem;

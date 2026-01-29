@@ -68,22 +68,57 @@ Added a special **Isometric Cube** theme that brings a 3D feel directly to your 
 
 ## 📖 API Reference
 
-### Props
+### Properties
 
-| Prop | Type | Default | Description |
-|------|------|---------|-------------|
-| `totalItems` | `number` | **required** | Total number of items to paginate |
-| `itemsPerPage` | `number` | `10` | Number of items per page |
-| `currentPage` | `number` | `1` | Current active page (v-model) |
-| `maxVisibleButtons` | `number` | `7` | Maximum number of page buttons to show |
-| `theme` | `string` | `'default'` | Theme name: `default`, `modern`, `minimal`, `gradient`, `cube`, `gothic`. |
-| `hideNumbers` | `boolean` | `false` | If `true`, only navigation arrows will be shown. |
-| `syncUrl` | `boolean` | `true` | Automatically sync current page with URL (?page=1) |
-| `urlKey` | `string` | `'page'` | Query parameter key for URL synchronization |
+| Property | Type | Default | Description |
+| :--- | :--- | :--- | :--- |
+| `total-items` | `number` | **required** | Total count of items |
+| `items-per-page` | `number` | `10` | Items per page |
+| `current-page` | `number` | `1` | Current active page (supports `v-model`) |
+| `max-visible-buttons`| `number` | `5` | Max visible page buttons |
+| `theme` | `string` | `'default'` | Theme name (see below) |
+| `size` | `string` | `'md'` | Component size: `sm`, `md`, `lg`, `xl` |
+| `hide-numbers` | `boolean`| `false` | Hide page numbers, show arrows only |
+| `sync-url` | `boolean`| `true` | Sync current page with URL query |
+| `url-key` | `string` | `'page'` | URL query parameter name |
 | `showFirstLast` | `boolean` | `true` | Show first/last page buttons |
 | `showPrevNext` | `boolean` | `true` | Show previous/next buttons |
 | `disabled` | `boolean` | `false` | Disable all pagination controls |
 | `ariaLabel` | `string` | `'Pagination Navigation'` | Custom aria-label for accessibility |
+
+### Available Themes
+
+We provide a collection of beautiful, high-quality themes:
+
+| Theme | Description |
+| :--- | :--- |
+| `default` | Clean and professional blue design. |
+| `modern` | Soft glassmorphism with subtle glow. |
+| `minimal` | Bold black & white brutalist style. |
+| `gradient` | Vibrant Sunset gradient with animations. |
+| `cube` | Isometric 3D buttons with realistic depth. |
+| `gothic` | Ornate, dark medieval aesthetic with gold accents. |
+| `cyberpunk` | Neon yellow glitch effect with geometric cuts. |
+| `neumorphic` | Soft, tactile UI with realistic shadows (Neumorphism). |
+| `aurora` | Animated Northern Lights gradient flow. |
+| `retro` | 8-bit arcade style with pixelated typography. |
+
+### Component Sizes
+
+Change the scale of the pagination component using the `size` prop:
+
+*   `sm`: Small and compact
+*   `md`: Default balanced size
+*   `lg`: Large and prominent
+*   `xl`: Extra large for bold interfaces
+
+```vue
+<!-- Small retro buttons -->
+<VPagination :total-items="100" size="sm" theme="retro" />
+
+<!-- Large modern glass buttons -->
+<VPagination :total-items="100" size="lg" theme="modern" />
+```
 
 ### Events
 

@@ -1,0 +1,57 @@
+/* Luxury Gold Theme - Premium Dark Minimal */
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,700&display=swap');
+
+.v-pagination--luxury {
+    --v-pagination-gap: 1.5rem;
+    --v-pagination-button-size: 3rem;
+    --v-pagination-button-bg: #0a0a0a;
+    --v-pagination-button-color: #d4af37;
+    --v-pagination-button-border: 1px solid #d4af37;
+    --v-pagination-button-radius: 0;
+
+    --v-pagination-active-bg: #d4af37;
+    --v-pagination-active-color: #0a0a0a;
+}
+
+.v-pagination--luxury .v-pagination__button {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.25rem;
+    letter-spacing: 0.05em;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+}
+
+.v-pagination--luxury .v-pagination__button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(120deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+    transition: all 0.5s;
+}
+
+.v-pagination--luxury .v-pagination__button:hover:not(:disabled) {
+    background: #1a1a1a !important;
+    border-color: #f1d592;
+    color: #f1d592 !important;
+    box-shadow: 0 0 15px rgba(212, 175, 55, 0.3);
+}
+
+.v-pagination--luxury .v-pagination__button:hover::before {
+    left: 100%;
+}
+
+.v-pagination--luxury .v-pagination__button--active {
+    background: #d4af37 !important;
+    color: #0a0a0a !important;
+    font-style: italic;
+    font-weight: 700;
+}
+
+.v-pagination--luxury .v-pagination__ellipsis {
+    color: #d4af37;
+    opacity: 0.6;
+}

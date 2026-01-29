@@ -1,0 +1,69 @@
+/* Vice City Theme - Classic 80s Neon */
+
+.v-pagination--vice {
+    --v-pagination-gap: 1.25rem;
+    --v-pagination-button-size: 0.8rem;
+    --v-pagination-button-border: 2px solid #00ffff;
+    --v-pagination-button-radius: 50%;
+    --v-pagination-button-bg: transparent;
+
+    --vice-pink: #ff00ff;
+    --vice-cyan: #00ffff;
+
+    --v-pagination-active-bg: var(--vice-pink);
+    --v-pagination-active-border: 2px solid #ffffff;
+
+    --v-pagination-ellipsis-color: var(--vice-cyan);
+}
+
+.v-pagination--vice .v-pagination__button {
+    position: relative;
+    border: var(--v-pagination-button-border);
+    background: var(--v-pagination-button-bg);
+    transition: all 0.3s ease;
+    box-shadow: 0 0 8px rgba(0, 255, 255, 0.4);
+    text-indent: -9999px;
+    overflow: hidden;
+}
+
+.v-pagination--vice .v-pagination__button:hover:not(:disabled) {
+    border-color: #ffffff;
+    transform: scale(1.3);
+    box-shadow: 0 0 15px #ffffff, 0 0 5px #00ffff;
+}
+
+/* Active State - Maximum Vice Vibes */
+.v-pagination--vice .v-pagination__button--active {
+    background: var(--vice-pink) !important;
+    border-color: #ffffff !important;
+    transform: scale(1.5);
+    box-shadow: 0 0 20px var(--vice-pink), 0 0 10px rgba(255, 255, 255, 0.5);
+}
+
+/* Arrows styling - hidden inside dots or made visible as glowing icons */
+.v-pagination--vice .v-pagination__button svg {
+    text-indent: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0.75rem;
+    height: 0.75rem;
+    color: var(--vice-cyan);
+}
+
+.v-pagination--vice .v-pagination__button--active svg {
+    color: #ffffff;
+}
+
+.v-pagination--vice .v-pagination__ellipsis {
+    color: var(--vice-cyan);
+    text-shadow: 0 0 8px var(--vice-cyan);
+    font-size: 1.25rem;
+}
+
+/* Dark mode - Intense Neon */
+.dark .v-pagination--vice,
+[data-theme='dark'] .v-pagination--vice {
+    filter: drop-shadow(0 0 10px rgba(255, 0, 255, 0.1));
+}

@@ -1,14 +1,19 @@
 <template>
-  <nav 
-    :class="['v-pagination', `v-pagination--${theme}`, { 'v-pagination--disabled': disabled }]"
-    :aria-label="ariaLabel"
+  <nav
+    :class="[
+      'v-pagination',
+      `v-pagination--${props.theme}`,
+      `v-pagination--${props.size}`,
+      { 'v-pagination--disabled': props.disabled }
+    ]"
+    :aria-label="props.ariaLabel"
     role="navigation"
   >
     <!-- First Page Button -->
     <button
-      v-if="showFirstLast"
+      v-if="props.showFirstLast"
       class="v-pagination__button v-pagination__button--first"
-      :disabled="disabled || isFirstPage"
+      :disabled="props.disabled || isFirstPage"
       @click="handleFirstPage"
       aria-label="Go to first page"
     >
@@ -19,9 +24,9 @@
 
     <!-- Previous Page Button -->
     <button
-      v-if="showPrevNext"
+      v-if="props.showPrevNext"
       class="v-pagination__button v-pagination__button--prev"
-      :disabled="disabled || isFirstPage"
+      :disabled="props.disabled || isFirstPage"
       @click="handlePrevPage"
       aria-label="Go to previous page"
     >
@@ -31,7 +36,7 @@
     </button>
 
     <!-- Dynamic Page Buttons -->
-    <template v-if="!hideNumbers">
+    <template v-if="!props.hideNumbers">
       <template v-for="(page, index) in visiblePages" :key="`${page}-${index}`">
         <span v-if="page === -1" class="v-pagination__ellipsis" aria-hidden="true">
           ...
@@ -39,7 +44,7 @@
         <button
           v-else
           :class="['v-pagination__button', { 'v-pagination__button--active': page === currentPage }]"
-          :disabled="disabled"
+          :disabled="props.disabled"
           :aria-current="page === currentPage ? 'page' : undefined"
           :aria-label="`Page ${page}`"
           @click="goToPage(Number(page))"
@@ -51,9 +56,9 @@
 
     <!-- Next Page Button -->
     <button
-      v-if="showPrevNext"
+      v-if="props.showPrevNext"
       class="v-pagination__button v-pagination__button--next"
-      :disabled="disabled || isLastPage"
+      :disabled="props.disabled || isLastPage"
       @click="handleNextPage"
       aria-label="Go to next page"
     >
@@ -64,9 +69,9 @@
 
     <!-- Last Page Button -->
     <button
-      v-if="showFirstLast"
+      v-if="props.showFirstLast"
       class="v-pagination__button v-pagination__button--last"
-      :disabled="disabled || isLastPage"
+      :disabled="props.disabled || isLastPage"
       @click="handleLastPage"
       aria-label="Go to last page"
     >
@@ -76,26 +81,45 @@
     </button>
   </nav>
 </template>
-
 <script setup lang="ts">
 import { watch, onMounted } from 'vue'
 import { usePagination } from '../composables/usePagination'
-import type { PaginationProps, PaginationEmits } from '../types'
 
-const props = withDefaults(defineProps<PaginationProps>(), {
+export interface Props {
+  totalItems: number
+  itemsPerPage?: number
+  currentPage?: number
+  maxVisibleButtons?: number
+  theme?: 'default' | 'modern' | 'minimal' | 'gradient' | 'cube' | 'gothic' | 'cyberpunk' | 'neumorphic' | 'aurora' | 'retro'
+  size?: 'sm' | 'md' | 'lg' | 'xl'
+  showFirstLast?: boolean
+  showPrevNext?: boolean
+  hideNumbers?: boolean
+  syncUrl?: boolean
+  urlKey?: string
+  ariaLabel?: string
+  disabled?: boolean
+}
+
+const props = withDefaults(defineProps<Props>(), {
   itemsPerPage: 10,
   currentPage: 1,
   maxVisibleButtons: 7,
   theme: 'default',
   showFirstLast: true,
   showPrevNext: true,
+  hideNumbers: false,
   syncUrl: true,
   urlKey: 'page',
   disabled: false,
+  size: 'md',
   ariaLabel: 'Pagination Navigation'
 })
 
-const emit = defineEmits<PaginationEmits>()
+const emit = defineEmits<{
+  (e: 'update:currentPage', page: number): void
+  (e: 'change', page: number): void
+}>()
 
 const {
   currentPage,
@@ -135,6 +159,7 @@ watch(currentPage, (newPage: number) => {
 })
 
 onMounted(() => {
+  console.log('VPagination mounted. Props:', props)
   if (props.syncUrl && typeof window !== 'undefined') {
     const params = new URLSearchParams(window.location.search)
     const pageFromUrl = parseInt(params.get(props.urlKey || 'page') || '')

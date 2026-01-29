@@ -1,0 +1,46 @@
+/* Neumorphic Theme - Soft Tactile UI */
+.v-pagination--neumorphic {
+    --v-pagination-gap: 1.25rem;
+    --v-pagination-button-size: 2.4rem;
+    --v-pagination-button-bg: #e0e5ec;
+    --v-pagination-button-color: #44476a;
+    --v-pagination-button-border: none;
+    --v-pagination-button-radius: 1rem;
+
+    --v-pagination-active-bg: #e0e5ec;
+    --v-pagination-active-color: #3b82f6;
+}
+
+.v-pagination--neumorphic .v-pagination__button {
+    background: #e0e5ec;
+    box-shadow: 9px 9px 16px rgb(163, 177, 198, 0.6), -9px -9px 16px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s ease;
+}
+
+.v-pagination--neumorphic .v-pagination__button:hover:not(:disabled) {
+    box-shadow: 4px 4px 8px rgb(163, 177, 198, 0.6), -4px -4px 8px rgba(255, 255, 255, 0.5);
+    transform: scale(0.98);
+}
+
+.v-pagination--neumorphic .v-pagination__button--active {
+    box-shadow: inset 6px 6px 12px #b8b9be, inset -6px -6px 12px #ffffff !important;
+    color: #3b82f6 !important;
+}
+
+/* Dark mode support */
+.dark .v-pagination--neumorphic,
+[data-theme='dark'] .v-pagination--neumorphic {
+    --v-pagination-button-bg: #2d3436;
+    --v-pagination-button-color: #dfe6e9;
+}
+
+.dark .v-pagination--neumorphic .v-pagination__button,
+[data-theme='dark'] .v-pagination--neumorphic .v-pagination__button {
+    background: #2d3436;
+    box-shadow: 6px 6px 12px #1e2324, -6px -6px 12px #3c4548;
+}
+
+.dark .v-pagination--neumorphic .v-pagination__button--active,
+[data-theme='dark'] .v-pagination--neumorphic .v-pagination__button--active {
+    box-shadow: inset 4px 4px 8px #1e2324, inset -4px -4px 8px #3c4548 !important;
+}

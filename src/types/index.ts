@@ -8,7 +8,9 @@ export interface PaginationProps {
     /** Maximum number of page buttons to show */
     maxVisibleButtons?: number
     /** Theme variant to apply */
-    theme?: 'default' | 'modern' | 'minimal' | 'gradient'
+    theme?: 'default' | 'modern' | 'minimal' | 'gradient' | 'cube' | 'gothic' | 'cyberpunk' | 'neumorphic' | 'aurora' | 'retro'
+    /** Size variant to apply */
+    size?: 'sm' | 'md' | 'lg' | 'xl'
     /** Show first/last page buttons */
     showFirstLast?: boolean
     /** Show previous/next buttons */
