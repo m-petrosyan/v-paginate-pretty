@@ -2,6 +2,8 @@
 
 Beautiful and customizable pagination component for **Vue 3** with Composition API. Featuring 6 stunning themes (including 3D, Gothic, and Glassmorphism) and TypeScript support.
 
+Check out the live demo here: https://m-petrosyan.github.io/v-paginate-pretty/
+
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Vue 3](https://img.shields.io/badge/Vue-3.x-4fc08d?logo=vue.js)](https://vuejs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178c6?logo=typescript)](https://www.typescriptlang.org/)
@@ -93,7 +95,7 @@ Added a special **Isometric Cube** theme that brings a 3D feel directly to your 
 ```vue
 <script setup>
 import { ref } from 'vue'
-import { VPagination } from '@vue-pagination/core'
+import { VPagination } from 'v-paginate-pretty'
 
 const currentPage = ref(1)
 
@@ -124,7 +126,7 @@ You can also use the `usePagination` composable directly for custom implementati
 
 ```vue
 <script setup>
-import { usePagination } from '@vue-pagination/core'
+import { usePagination } from 'v-paginate-pretty'
 
 const {
   currentPage,
@@ -211,7 +213,7 @@ import type {
   PaginationEmits,
   UsePaginationOptions,
   UsePaginationReturn
-} from '@vue-pagination/core'
+} from 'v-paginate-pretty'
 ```
 
 ## ♿ Accessibility
@@ -246,4 +248,4 @@ Built with ❤️ using Vue 3 and TypeScript.
 
 ---
 
-**Enjoy using @vue-pagination/core!** ⭐ Star us on GitHub if you find this useful!
+**Enjoy using v-paginate-pretty!** ⭐ Star us on GitHub if you find this useful!
