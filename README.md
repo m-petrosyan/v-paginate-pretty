@@ -11,8 +11,6 @@ Check out the live demo here: https://m-petrosyan.github.io/v-paginate-pretty/
 [![npm downloads](https://img.shields.io/npm/dm/v-paginate-pretty)](https://www.npmjs.com/package/v-paginate-pretty)
 [![Demo](https://img.shields.io/badge/Demo-Live-blueviolet?style=for-the-badge&logo=google-chrome)](https://m-petrosyan.github.io/v-paginate-pretty/)
 
-![Demo Preview](https://raw.githubusercontent.com/m-petrosyan/v-paginate-pretty/assets/demo.png)
-
 ## ✨ Features
 
 - 🚀 **Vue 3 Composition API** - Built from the ground up for modern Vue.
