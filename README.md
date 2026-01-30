@@ -81,10 +81,10 @@ Added a special **Isometric Cube** theme that brings a 3D feel directly to your 
 | `hide-numbers` | `boolean`| `false` | Hide page numbers, show arrows only |
 | `sync-url` | `boolean`| `true` | Sync current page with URL query |
 | `url-key` | `string` | `'page'` | URL query parameter name |
-| `showFirstLast` | `boolean` | `true` | Show first/last page buttons |
-| `showPrevNext` | `boolean` | `true` | Show previous/next buttons |
+| `show-first-last` | `boolean` | `true` | Show first/last page buttons |
+| `show-prev-next` | `boolean` | `true` | Show previous/next buttons |
 | `disabled` | `boolean` | `false` | Disable all pagination controls |
-| `ariaLabel` | `string` | `'Pagination Navigation'` | Custom aria-label for accessibility |
+| `aria-label` | `string` | `'Pagination Navigation'` | Custom aria-label for accessibility |
 
 ### Available Themes
 
